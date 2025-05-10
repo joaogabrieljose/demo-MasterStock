@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import masterstock.demo.dto.DtoProdutos;
 import masterstock.demo.entity.Produto;
 import masterstock.demo.service.useCaseProdutos.UseCaseCreateProdutos;
 
@@ -21,10 +22,10 @@ public class ProdutoController {
     private UseCaseCreateProdutos useCaseCreateProdutos;
 
     @PostMapping("/")
-    public ResponseEntity<?> create(@RequestBody Produto produto){
+    public ResponseEntity<?> create(@RequestBody DtoProdutos dtoProdutos){
        
         try{
-             var novo = useCaseCreateProdutos.createProduto(produto);
+             var novo = useCaseCreateProdutos.createProduto(dtoProdutos);
              return ResponseEntity.ok().body("create produto");
 
         }catch(Exception e){
