@@ -1,4 +1,4 @@
-package masterstock.demo.controller;
+package masterstock.demo.controller.controllerProdutos;
 
 import java.util.UUID;
 
@@ -12,14 +12,21 @@ import org.springframework.web.bind.annotation.RestController;
 import masterstock.demo.dto.DtoProdutos;
 import masterstock.demo.entity.Produto;
 import masterstock.demo.service.useCaseProdutos.UseCaseCreateProdutos;
+import masterstock.demo.service.useCaseProdutos.UseCaseFindAllProdutos;
+
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+
 
 @RestController
 @RequestMapping("/produtos")
-public class ProdutoController {
+public class ControllePostProdutos {
 
 
     @Autowired
     private UseCaseCreateProdutos useCaseCreateProdutos;
+
+    @Autowired UseCaseFindAllProdutos useCaseFindAllProdutos;
 
     @PostMapping("/")
     public ResponseEntity<?> create(@RequestBody DtoProdutos dtoProdutos){
@@ -32,5 +39,9 @@ public class ProdutoController {
             return ResponseEntity.badRequest().body(e.getMessage());
         }
     }
+
+
+   
+    
     
 }

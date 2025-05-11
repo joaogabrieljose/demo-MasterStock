@@ -22,6 +22,7 @@ public class UseCaseCreateProdutos {
         });
 
         Produto produtos = new Produto();
+        //produtos.setId(dtoProdutos.id());
         produtos.setNome(dtoProdutos.nome());
         produtos.setPreco(dtoProdutos.preco());
         produtos.setQuantidade(dtoProdutos.quantidade());

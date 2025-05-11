@@ -1,5 +1,6 @@
 package masterstock.demo.repository;
 
+import java.util.List;
 import java.util.Optional;
 import java.util.UUID;
 
@@ -9,8 +10,7 @@ import masterstock.demo.entity.Produto;
 
 @Repository
 public interface ProdutoRepository extends JpaRepository<Produto,UUID>{
-
-    Optional<Produto> findById (UUID id);
+    Produto findById (UUID id);
     Optional<Produto> findByNome (String nome);
-    Optional<Produto> findByPreco (Double preco);
+    List<Produto> findByPreco (Double preco);
 }
