@@ -11,6 +11,6 @@ import masterstock.demo.entity.Produto;
 @Repository
 public interface ProdutoRepository extends JpaRepository<Produto,UUID>{
     Produto findById (UUID id);
-    Optional<Produto> findByNome (String nome);
+    Produto findByNomeContainingIgnoreCase (String nome);
     List<Produto> findByPreco (Double preco);
 }
