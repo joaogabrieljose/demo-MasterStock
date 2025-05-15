@@ -10,6 +10,6 @@ import masterstock.demo.entity.Categoria;
 @Repository
 public interface CategoriaRepository extends JpaRepository<Categoria,UUID>{
 
-    Optional<Categoria> findById (UUID id);
+    Categoria findById (UUID id);
 
 }

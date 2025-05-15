@@ -13,4 +13,5 @@ public interface ProdutoRepository extends JpaRepository<Produto,UUID>{
     Produto findById (UUID id);
     Produto findByNomeContainingIgnoreCase (String nome);
     Produto findByPrecoBetween (double precoMin, double preCoMax);
+    Produto findByCategoria (UUID idCategoria);
 }
