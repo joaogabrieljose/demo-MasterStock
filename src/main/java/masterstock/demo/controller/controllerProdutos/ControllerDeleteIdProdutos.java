@@ -8,8 +8,6 @@ import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-
-import masterstock.demo.dto.DtoProdutosGetId;
 import masterstock.demo.entity.Produto;
 import masterstock.demo.service.useCaseProdutos.UseCaseDeleteIdProduto;
 

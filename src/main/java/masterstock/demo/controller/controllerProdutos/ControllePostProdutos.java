@@ -1,7 +1,5 @@
 package masterstock.demo.controller.controllerProdutos;
 
-import java.util.UUID;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -10,12 +8,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import masterstock.demo.dto.DtoProdutos;
-import masterstock.demo.entity.Produto;
 import masterstock.demo.service.useCaseProdutos.UseCaseCreateProdutos;
 import masterstock.demo.service.useCaseProdutos.UseCaseFindAllProdutos;
 
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestParam;
+
 
 
 @RestController
