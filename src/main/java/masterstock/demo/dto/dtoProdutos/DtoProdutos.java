@@ -1,4 +1,4 @@
-package masterstock.demo.dto;
+package masterstock.demo.dto.dtoProdutos;
 
 import java.util.UUID;
 

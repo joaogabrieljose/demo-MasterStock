@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import masterstock.demo.dto.DtoProdutos;
+import masterstock.demo.dto.dtoProdutos.DtoProdutos;
 import masterstock.demo.service.useCaseProdutos.UseCaseCreateProdutos;
 import masterstock.demo.service.useCaseProdutos.UseCaseFindAllProdutos;
 

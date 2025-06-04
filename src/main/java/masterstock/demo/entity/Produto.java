@@ -4,6 +4,7 @@ import java.util.UUID;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.JoinColumn;
@@ -27,18 +28,12 @@ public class Produto {
     private double preco;
     private int quantidade;
 
-    @ManyToOne()
-    @JoinColumn(name = "categoria_id", insertable = false, updatable  = false)
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "categoria_id")
     private Categoria categoria;
 
-    @Column(name = "categoria_id")
-    private UUID categoriaId;
-
-    @ManyToOne()
-    @JoinColumn(name = "fornecedor_id", insertable = false, updatable = false)
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "fornecedor_id")
     private Fornecedor fornecedor;
-
-    @Column(name = "fornecedor_id")
-    private UUID fornecedorId;
     
 }
