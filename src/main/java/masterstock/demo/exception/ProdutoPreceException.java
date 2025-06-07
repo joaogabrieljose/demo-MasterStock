@@ -2,7 +2,7 @@ package masterstock.demo.exception;
 
 public class ProdutoPreceException extends RuntimeException {
  
-    public ProdutoPreceException(){s
+    public ProdutoPreceException(){
         super("preco not found");
     }
 }

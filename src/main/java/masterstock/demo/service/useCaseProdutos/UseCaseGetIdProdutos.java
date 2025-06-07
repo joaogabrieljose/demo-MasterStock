@@ -19,7 +19,7 @@ public class UseCaseGetIdProdutos {
 
     public DtoProdutosGetId produtoGetId(UUID id) {
 
-        Produto produto = this.produtoRepository.findById(id);
+        Produto produto = this.produtoRepository.findById(id).get();
         if (produto == null) {
             throw new ProdutoException();
         }
