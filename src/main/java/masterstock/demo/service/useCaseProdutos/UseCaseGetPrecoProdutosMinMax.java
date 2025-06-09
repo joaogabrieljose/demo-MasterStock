@@ -23,10 +23,7 @@ public class UseCaseGetPrecoProdutosMinMax {
             throw new ProdutoPreceException();
         }
 
-        return new  DtoProdutos (
-            produto.getNome(), 
-            produto.getPreco(), 
-            produto.getQuantidade());
+        return new  DtoProdutos ();
     }
     
 }

@@ -9,6 +9,7 @@ import masterstock.demo.entity.Produto;
 
 @Data
 public class DtoProdutos {
+    long id;
     String nome;
     Double preco;
     int quantidade;
