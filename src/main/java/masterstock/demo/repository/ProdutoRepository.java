@@ -11,7 +11,7 @@ import masterstock.demo.entity.Categoria;
 import masterstock.demo.entity.Produto;
 
 @Repository
-public interface ProdutoRepository extends JpaRepository<Produto,UUID>{
+public interface ProdutoRepository extends JpaRepository<Produto,Long>{
     Optional<Produto> findByNome (String nome);
     Optional<Produto>findById (UUID id);
     Produto findByNomeContainingIgnoreCase (String nome);

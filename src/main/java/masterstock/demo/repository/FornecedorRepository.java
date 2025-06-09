@@ -8,7 +8,7 @@ import org.springframework.stereotype.Repository;
 import masterstock.demo.entity.Fornecedor;
 
 @Repository
-public interface FornecedorRepository extends JpaRepository<Fornecedor,UUID> {
+public interface FornecedorRepository extends JpaRepository<Fornecedor,Long> {
     
     Optional<Fornecedor> findById (UUID id);
 }

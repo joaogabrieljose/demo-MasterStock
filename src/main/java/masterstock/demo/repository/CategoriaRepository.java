@@ -11,7 +11,7 @@ import java.util.List;
 
 
 @Repository
-public interface CategoriaRepository extends JpaRepository<Categoria,UUID>{
+public interface CategoriaRepository extends JpaRepository<Categoria,Long>{
 
     Categoria findById (DtoCategoria dtoCategoria);
     Optional<Categoria> findByNome(String nome);

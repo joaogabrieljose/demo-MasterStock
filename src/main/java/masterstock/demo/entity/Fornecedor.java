@@ -21,8 +21,8 @@ import lombok.NoArgsConstructor;
 public class Fornecedor {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.UUID)
-    private UUID id;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private long id;
     private String nome;
     private String email;
     private String telefone;
