@@ -17,14 +17,14 @@ public class UseCaseCreateProdutos {
     private ProdutoRepository produtoRepository;
     
     public Object createProduto(DtoProdutos dtoProdutos){
-        produtoRepository.findByNome(dtoProdutos.nome()).ifPresent((use)->{
+        produtoRepository.findByNome(dtoProdutos.getNome()).ifPresent((use)->{
             throw new ProdutoException();
         });
 
         Produto produtos = new Produto();
-        produtos.setNome(dtoProdutos.nome());
-        produtos.setPreco(dtoProdutos.preco());
-        produtos.setQuantidade(dtoProdutos.quantidade());
+        produtos.setNome(dtoProdutos.getNome());
+        produtos.setPreco(dtoProdutos.getPreco());
+        produtos.setQuantidade(dtoProdutos.getQuantidade());
         
         return this.produtoRepository.save(produtos);
     }

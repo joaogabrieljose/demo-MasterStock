@@ -13,7 +13,6 @@ public class DtoProdutos {
     Double preco;
     int quantidade;
 
-
     public DtoProdutos(Produto entity){
         BeanUtils.copyProperties(entity, this);
     }
