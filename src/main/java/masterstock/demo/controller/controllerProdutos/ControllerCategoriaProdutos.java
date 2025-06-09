@@ -22,7 +22,7 @@ public class ControllerCategoriaProdutos {
     @Autowired
     private UseCaseProdutosCategoria caseProdutosCategoria;
     @GetMapping("/categoria/{id}")
-        public ResponseEntity<List<DtoProdutoCategoria>> listarPorCategoria(@PathVariable UUID id) {
+        public ResponseEntity<List<DtoProdutoCategoria>> listarPorCategoria(@PathVariable long id) {
             List<DtoProdutoCategoria> produtos =caseProdutosCategoria.produtoCategoria(id);
             
             if (produtos.isEmpty()) {

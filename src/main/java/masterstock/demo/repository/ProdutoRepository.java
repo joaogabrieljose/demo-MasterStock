@@ -13,9 +13,9 @@ import masterstock.demo.entity.Produto;
 @Repository
 public interface ProdutoRepository extends JpaRepository<Produto,Long>{
     Optional<Produto> findByNome (String nome);
-    Optional<Produto>findById (UUID id);
+    Optional<Produto>findById (long id);
     Produto findByNomeContainingIgnoreCase (String nome);
     Produto findByPrecoBetween (double precoMin, double preCoMax);
-    //List<Produto> findByCategoriaId (UUID categoriaId);
-    List<Produto> findByCategoriaId(UUID categoriaId);
+    //List<Produto> findByCategoriaId (long categoriaId);
+    List<Produto> findByCategoriaId(long categoriaId);
 }

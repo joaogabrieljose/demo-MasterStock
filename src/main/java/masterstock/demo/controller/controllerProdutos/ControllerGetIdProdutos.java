@@ -20,7 +20,7 @@ public class ControllerGetIdProdutos {
 
 
     @GetMapping("/{id}")
-    public ResponseEntity<?> getId(@PathVariable UUID id){
+    public ResponseEntity<?> getId(@PathVariable long id){
 
         try {
             var get = useCaseGetIdProdutos.produtoGetId(id);

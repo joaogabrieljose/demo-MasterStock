@@ -17,7 +17,7 @@ public class UseCaseGetIdProdutos {
     @Autowired 
     private ProdutoRepository produtoRepository;
 
-    public DtoProdutosGetId produtoGetId(UUID id) {
+    public DtoProdutosGetId produtoGetId(long id) {
 
         Produto produto = this.produtoRepository.findById(id).get();
         if (produto == null) {

@@ -26,7 +26,7 @@ public class UseCaseProdutosCategoria {
     @Autowired
     private ProdutoRepository produtoRepository;
 
-    public List<DtoProdutoCategoria> produtoCategoria(UUID idCategoria){
+    public List<DtoProdutoCategoria> produtoCategoria(long idCategoria){
 
         if (!categoriaRepository.existsById(idCategoria)) {
             throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Categoria não encontrada");

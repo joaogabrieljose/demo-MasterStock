@@ -10,5 +10,5 @@ import masterstock.demo.entity.Fornecedor;
 @Repository
 public interface FornecedorRepository extends JpaRepository<Fornecedor,Long> {
     
-    Optional<Fornecedor> findById (UUID id);
+    Optional<Fornecedor> findById (long id);
 }

@@ -5,10 +5,10 @@ import java.util.UUID;
 import masterstock.demo.entity.Categoria;
 
 public record DtoProdutoCategoria(
-    UUID produtoId,
+    long produtoId,
     String nomeProduto,
     double preco,
     int quantidade,
-    UUID categoriaId,
+    long categoriaId,
     String nomeCategoria
 ) {}

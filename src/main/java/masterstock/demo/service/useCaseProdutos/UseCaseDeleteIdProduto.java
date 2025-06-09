@@ -21,7 +21,7 @@ public class UseCaseDeleteIdProduto {
     private ProdutoByIdProdutoRepository produtoByIdProdutoRepository;
 
 
-    public void deleteIdProduto(UUID id){
+    public void deleteIdProduto(long id){
        
         this.produtoByIdProdutoRepository.findById(id).ifPresentOrElse(
             dtoProdutos -> produtoByIdProdutoRepository.deleteById(id),
