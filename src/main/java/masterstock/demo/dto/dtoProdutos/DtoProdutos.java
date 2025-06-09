@@ -1,6 +1,23 @@
 package masterstock.demo.dto.dtoProdutos;
 
-import java.util.UUID;
+import org.springframework.beans.BeanUtils;
 
-public record DtoProdutos(String nome, Double preco, int quantidade) {    
+import lombok.Data;
+import lombok.NoArgsConstructor;
+import masterstock.demo.entity.Produto;
+@NoArgsConstructor
+
+@Data
+public class DtoProdutos {
+    String nome;
+    Double preco;
+    int quantidade;
+
+
+    public DtoProdutos(Produto entity){
+        BeanUtils.copyProperties(entity, this);
+    }
+
+
+    
 }
