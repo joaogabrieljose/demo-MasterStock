@@ -18,8 +18,8 @@ public class ControllerPrecoProdutoMinMax {
 
 
     @GetMapping("/preco")
-    public ResponseEntity<?> getPrecoMinMax(@RequestParam (required = false, defaultValue = "10") double min, 
-                                            @RequestParam(required = false, defaultValue = "100") double max){
+    public ResponseEntity<?> getPrecoMinMax(@RequestParam (required = false, defaultValue = "0") double min, 
+                                            @RequestParam(required = false, defaultValue = "150.00") double max){
         
         try {
             var novo = this.caseGetPrecoProdutosMinMax.getPrecoMinMax(min, max);
