@@ -28,7 +28,7 @@ public class UseCaseProdutosCategoria {
 
     public List<DtoProdutoCategoria> produtoCategoria(long idCategoria){
 
-        if (!categoriaRepository.exists(idCategoria)) {
+        if (!categoriaRepository.existsById(idCategoria)) {
             throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Categoria não encontrada");
         }
         return produtoRepository.findByCategoriaId(idCategoria).stream()
