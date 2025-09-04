@@ -8,7 +8,6 @@ import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-import masterstock.demo.entity.Produto;
 import masterstock.demo.service.useCaseProdutos.UseCaseDeleteIdProduto;
 
 @RestController
@@ -19,11 +18,10 @@ public class ControllerDeleteIdProdutos {
     private UseCaseDeleteIdProduto useCaseDeleteIdProduto;
 
     @DeleteMapping("/{id}")
-    public ResponseEntity<Object> deleteProdutoId(@PathVariable Produto id){
+    public ResponseEntity<Object> deleteProdutoId(@PathVariable long id){
 
         try {
-            
-           this.useCaseDeleteIdProduto.deleteIdProduto(id.getId());
+           this.useCaseDeleteIdProduto.deleteIdProduto(id);
             return ResponseEntity.noContent().build();
         } catch (Exception e) {
             return ResponseEntity.badRequest().body(e.getMessage());
