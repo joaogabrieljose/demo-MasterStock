@@ -10,6 +10,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 import org.springframework.web.server.ResponseStatusException;
 
+import jakarta.transaction.Transactional;
 import masterstock.demo.dto.dtoProdutos.DtoProdutoCategoria;
 import masterstock.demo.entity.Categoria;
 import masterstock.demo.entity.Produto;
@@ -26,6 +27,7 @@ public class UseCaseProdutosCategoria {
     @Autowired
     private ProdutoRepository produtoRepository;
 
+    @Transactional
     public List<DtoProdutoCategoria> produtoCategoria(long idCategoria){
 
         if (!categoriaRepository.existsById(idCategoria)) {

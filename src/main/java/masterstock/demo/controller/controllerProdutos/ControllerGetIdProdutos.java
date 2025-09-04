@@ -14,6 +14,7 @@ import masterstock.demo.service.useCaseProdutos.UseCaseGetIdProdutos;
 @RestController
 @RequestMapping("/produtos")
 public class ControllerGetIdProdutos {
+    //ola mundo
 
     @Autowired
     private UseCaseGetIdProdutos useCaseGetIdProdutos;
