@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RestController;
 import masterstock.demo.service.useCaseProdutos.UseCaseFindAllProdutos;
 
 @RestController
-@RequestMapping("/produtos")
+@RequestMapping("/produto")
 public class ControllerGetProdutos {
 
     @Autowired

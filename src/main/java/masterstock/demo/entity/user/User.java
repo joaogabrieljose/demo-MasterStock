@@ -8,6 +8,7 @@ import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
+import jakarta.persistence.Convert;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -30,6 +31,7 @@ public class User implements UserDetails{
     private String id;
     private String login;
     private String password;
+    @Convert(converter = UserRolesConvert.class) 
     private UserRole role;
 
     public User(String login, String password, UserRole role){

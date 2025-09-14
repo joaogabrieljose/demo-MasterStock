@@ -37,19 +37,13 @@ public class TokenService {
         }
     }
 
-    public String validateToken(String token){
-        try {
-
+    public String validateToken(String token)throws JWTVerificationException{
             Algorithm algorithm = Algorithm.HMAC256(secret);
             return JWT.require(algorithm)
                     .withIssuer("auth-api")
                     .build()
                     .verify(token)
                     .getSubject();
-            
-        } catch (JWTVerificationException e) {
-            return "";
-        }
     }
 
 

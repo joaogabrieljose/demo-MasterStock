@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import jakarta.validation.Valid;
 import masterstock.demo.dto.dtoProdutos.DtoProdutos;
 import masterstock.demo.service.useCaseProdutos.UseCaseCreateProdutos;
 import masterstock.demo.service.useCaseProdutos.UseCaseFindAllProdutos;
@@ -25,7 +26,7 @@ public class ControllePostProdutos {
     @Autowired UseCaseFindAllProdutos useCaseFindAllProdutos;
 
     @PostMapping("/")
-    public ResponseEntity<?> create(@RequestBody DtoProdutos dtoProdutos){
+    public ResponseEntity<?> create(@RequestBody @Valid DtoProdutos dtoProdutos){
        
         try{
              var novo = useCaseCreateProdutos.createProduto(dtoProdutos);

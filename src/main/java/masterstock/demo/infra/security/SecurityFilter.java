@@ -10,6 +10,8 @@ import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Component;
 import org.springframework.web.filter.OncePerRequestFilter;
 
+import com.auth0.jwt.exceptions.JWTVerificationException;
+
 import jakarta.servlet.FilterChain;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;
@@ -31,11 +33,18 @@ public class SecurityFilter extends OncePerRequestFilter {
         
             var token = this.recoverToken(request);
             if (token != null) {
-                var login = this.tokenService.validateToken(token);
-                UserDetails user = userRepository.findByLogin(login);
 
-                var authentication = new UsernamePasswordAuthenticationToken(login, null, user.getAuthorities());
-                SecurityContextHolder.getContext().setAuthentication(authentication);
+                try {
+                    var login = this.tokenService.validateToken(token);
+                    UserDetails user = userRepository.findByLogin(login);
+                    
+                    if (user != null) {
+                        var authentication = new UsernamePasswordAuthenticationToken(login, null, user.getAuthorities());
+                        SecurityContextHolder.getContext().setAuthentication(authentication);
+                    }
+                } catch (JWTVerificationException e) {
+                    
+                }
             }
             filterChain.doFilter(request, response);
     }
