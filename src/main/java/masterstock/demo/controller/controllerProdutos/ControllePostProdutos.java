@@ -15,7 +15,7 @@ import masterstock.demo.service.useCaseProdutos.UseCaseFindAllProdutos;
 
 
 @RestController
-@RequestMapping("/produtos")
+@RequestMapping("/produto")
 public class ControllePostProdutos {
 
 

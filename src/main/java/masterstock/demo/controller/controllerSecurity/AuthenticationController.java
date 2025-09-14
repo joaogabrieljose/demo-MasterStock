@@ -13,8 +13,10 @@ import org.springframework.web.bind.annotation.RequestBody;
 
 import jakarta.validation.Valid;
 import masterstock.demo.dto.dtoSecurity.Authentication;
+import masterstock.demo.dto.dtoSecurity.LoginResponseDTO;
 import masterstock.demo.dto.dtoSecurity.RegisterDTO;
 import masterstock.demo.entity.user.User;
+import masterstock.demo.infra.security.TokenService;
 import masterstock.demo.repository.UserRepository;
 
 @RestController
@@ -27,6 +29,9 @@ public class AuthenticationController {
     @Autowired 
     private UserRepository userRepository;
 
+    @Autowired
+    private TokenService tokenService;
+
 
 
     @PostMapping("/login")
@@ -35,7 +40,10 @@ public class AuthenticationController {
         var usernamePassword = new UsernamePasswordAuthenticationToken(dto.login(), dto.password());
         var auth = this.authenticationManager.authenticate(usernamePassword);
 
-        return ResponseEntity.ok().build();
+
+        var token = tokenService.generateToken((User) auth.getPrincipal());
+
+        return ResponseEntity.ok(new LoginResponseDTO(token));
     }
 
     @PostMapping("/register")
