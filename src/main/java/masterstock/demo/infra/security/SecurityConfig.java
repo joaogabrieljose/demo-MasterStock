@@ -28,6 +28,7 @@ public class SecurityConfig {
                 .anyRequest().authenticated()
                 
                 )   
+                .addFilterBefore(null, null)
             .build();
     }
 
